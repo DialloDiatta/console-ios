@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cla26e7payit6"]
+
+[ext_resource type="Texture2D" uid="uid://dd5mdk47ewent" path="res://assets/ui/pointer.webp" id="1_ws54k"]
+[ext_resource type="Script" uid="uid://ctfesin7cpq6u" path="res://scenes/Components/custom_cursor.gd" id="2_ic6v3"]
+
+[node name="CustomCursor" type="Sprite2D" unique_id=1671544884]
+process_mode = 3
+z_index = 10
+position = Vector2(20, 23.000002)
+rotation = -0.7941248
+texture = ExtResource("1_ws54k")
+offset = Vector2(4.165, 0)
+script = ExtResource("2_ic6v3")
+rest_texture = ExtResource("1_ws54k")
+grab_texture = ExtResource("1_ws54k")

@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://do4rxvr23k86d"]
+
+[ext_resource type="Texture2D" uid="uid://cowgdt3vxv8xk" path="res://assets/ui/frame_1.webp" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://chhukyg276xu4" path="res://scenes/Levels/random_int_2_consoles.gd" id="1_7mycd"]
+[ext_resource type="PackedScene" uid="uid://c5ox4macy1vg1" path="res://scenes/frame.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://1gbgsin2f27j" path="res://scenes/SetGamePopUp.tscn" id="2_272bh"]
+[ext_resource type="Texture2D" uid="uid://deutlm0c3kttd" path="res://assets/ui/background.png" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://d1r466kq3vjoe" path="res://assets/ui/banner.png" id="4_1bvp3"]
+[ext_resource type="AudioStream" uid="uid://ct0m30utky13j" path="res://assets/sfx/level-up-1.mp3" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bixljoltyauvt" path="res://scenes/back_button.tscn" id="8_5vw27"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.34509805, 0.80784315, 0.5294118, 0.92941177)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[node name="Main" type="Control" unique_id=229827327]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7mycd")
+pop_up_scene = ExtResource("2_272bh")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1970463370]
+position = Vector2(961, 570)
+scale = Vector2(1.2129276, 1.2129276)
+texture = ExtResource("3_h2yge")
+
+[node name="Control2" type="Control" parent="." unique_id=1292737446]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Frame3" type="Sprite2D" parent="Control2" unique_id=708235007]
+visible = false
+position = Vector2(945, 538)
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("1_0xm2m")
+
+[node name="Frame2" parent="Control2" unique_id=544095981 instance=ExtResource("1_ig7tw")]
+layout_mode = 0
+offset_left = 732.0
+offset_top = 320.0
+offset_right = 1136.0
+offset_bottom = 720.0
+scale = Vector2(1.1269451, 1.1269451)
+
+[node name="Banner" type="Sprite2D" parent="." unique_id=1988383862]
+position = Vector2(954, 35)
+scale = Vector2(0.3394781, 0.3394781)
+texture = ExtResource("4_1bvp3")
+
+[node name="Timer" type="Timer" parent="." unique_id=951845022]
+unique_name_in_owner = true
+wait_time = 2.5
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=774621636]
+stream = ExtResource("6_7mycd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=415768729]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -121.0
+offset_right = 60.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 40
+
+[node name="PlayButton" type="Button" parent="HBoxContainer" unique_id=479376499]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "Start"
+
+[node name="SelectGameButton" type="Button" parent="HBoxContainer" unique_id=842325435]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "Select Game"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1316112027]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -105.5
+offset_top = -221.0
+offset_right = 105.5
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer" unique_id=1851944060]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_272bh")
+value = 18.4
+show_percentage = false
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=986321789]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "Ready..."
+horizontal_alignment = 1
+
+[node name="BackButton" parent="." unique_id=500648264 instance=ExtResource("8_5vw27")]
+layout_mode = 0
+offset_left = 1789.0
+offset_top = 77.0
+offset_right = 1833.0
+offset_bottom = 121.0
+next_scene = "uid://mw4u75ow5ddu"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/SelectGameButton" to="." method="_on_select_game_button_pressed"]

@@ -1,0 +1,573 @@
+[gd_scene format=3 uid="uid://kgiddh5kqa3w"]
+
+[ext_resource type="Script" uid="uid://c7kg6yqxnqils" path="res://scenes/Shop/shop.gd" id="1_5khn6"]
+[ext_resource type="Texture2D" uid="uid://b8usntfv5c1e4" path="res://assets/ui/gem.webp" id="2_1g71r"]
+[ext_resource type="PackedScene" uid="uid://bixljoltyauvt" path="res://scenes/back_button.tscn" id="3_v0jmt"]
+[ext_resource type="Texture2D" uid="uid://bk3glgw0n8pll" path="res://assets/ui/screen.webp" id="4_1hecs"]
+[ext_resource type="Script" uid="uid://bpgxdjbu1si2" path="res://resources/styleboxes/style_box_flat_plus.gd" id="5_ryl7i"]
+[ext_resource type="Script" uid="uid://ccl05ewnqndih" path="res://resources/styleboxes/style_box_stacked.gd" id="6_eetfh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1g71r"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.78431374)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1hecs"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrtdt"]
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+script = ExtResource("5_ryl7i")
+metadata/_custom_type_script = "uid://bpgxdjbu1si2"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35ukv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+expand_margin_left = -5.0
+expand_margin_top = -5.0
+expand_margin_right = -5.0
+expand_margin_bottom = -5.0
+script = ExtResource("5_ryl7i")
+margin_top = -5
+margin_bottom = -5
+margin_left = -5
+margin_right = -5
+metadata/_custom_type_script = "uid://bpgxdjbu1si2"
+
+[sub_resource type="StyleBox" id="StyleBox_jpxio"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = -1.0
+content_margin_top = -1.0
+content_margin_right = -1.0
+content_margin_bottom = -1.0
+script = ExtResource("6_eetfh")
+style_boxes = Array[StyleBox]([SubResource("StyleBoxFlat_vrtdt"), SubResource("StyleBoxFlat_35ukv")])
+metadata/_custom_type_script = "uid://ccl05ewnqndih"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eetfh"]
+bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+expand_margin_left = -5.0
+expand_margin_top = -5.0
+expand_margin_right = -5.0
+expand_margin_bottom = -5.0
+script = ExtResource("5_ryl7i")
+margin_top = -5
+margin_bottom = -5
+margin_left = -5
+margin_right = -5
+metadata/_custom_type_script = "uid://bpgxdjbu1si2"
+
+[sub_resource type="Gradient" id="Gradient_h8rrp"]
+colors = PackedColorArray(0.07, 0.07, 0.07, 1, 0.22, 0.22, 0.22, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vrtdt"]
+gradient = SubResource("Gradient_h8rrp")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_35ukv"]
+texture = SubResource("GradientTexture2D_vrtdt")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8rrp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBox" id="StyleBox_nj4jc"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = -1.0
+content_margin_top = -1.0
+content_margin_right = -1.0
+content_margin_bottom = -1.0
+script = ExtResource("6_eetfh")
+style_boxes = Array[StyleBox]([SubResource("StyleBoxTexture_35ukv"), SubResource("StyleBoxFlat_h8rrp")])
+metadata/_custom_type_script = "uid://ccl05ewnqndih"
+
+[node name="Shop" type="Control" unique_id=1145215031]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(561, 440)
+script = ExtResource("1_5khn6")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=270147003]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -270.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1g71r")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2023802588]
+layout_mode = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer" unique_id=438519121]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer" unique_id=1003306342]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="ItemCell" type="MarginContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer" unique_id=2007928023]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell" unique_id=1771873054]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell/VBoxContainer" unique_id=267539613]
+clip_contents = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell/VBoxContainer/PanelContainer" unique_id=51412508]
+layout_mode = 2
+texture = ExtResource("2_1g71r")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell/VBoxContainer" unique_id=68974495]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Price: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemCell2" type="MarginContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer" unique_id=1580164771]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell2" unique_id=680494894]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell2/VBoxContainer" unique_id=1923880786]
+clip_contents = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell2/VBoxContainer/PanelContainer" unique_id=1350025852]
+layout_mode = 2
+texture = ExtResource("2_1g71r")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell2/VBoxContainer" unique_id=970464822]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Price: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemCell3" type="MarginContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer" unique_id=38904594]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell3" unique_id=962316687]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell3/VBoxContainer" unique_id=1259890268]
+clip_contents = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell3/VBoxContainer/PanelContainer" unique_id=1755917742]
+layout_mode = 2
+texture = ExtResource("2_1g71r")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell3/VBoxContainer" unique_id=166004669]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Price: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemCell4" type="MarginContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer" unique_id=1585408857]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell4" unique_id=1178083604]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell4/VBoxContainer" unique_id=1539274995]
+clip_contents = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell4/VBoxContainer/PanelContainer" unique_id=1083847777]
+layout_mode = 2
+texture = ExtResource("2_1g71r")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell4/VBoxContainer" unique_id=1976511534]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Price: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemCell5" type="MarginContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer" unique_id=924680112]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell5" unique_id=1085721722]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell5/VBoxContainer" unique_id=580743279]
+clip_contents = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell5/VBoxContainer/PanelContainer" unique_id=1435237494]
+layout_mode = 2
+texture = ExtResource("2_1g71r")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell5/VBoxContainer" unique_id=1425614583]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Price: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemCell6" type="MarginContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer" unique_id=1524037756]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell6" unique_id=282169642]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell6/VBoxContainer" unique_id=456352255]
+clip_contents = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell6/VBoxContainer/PanelContainer" unique_id=1123937619]
+layout_mode = 2
+texture = ExtResource("2_1g71r")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell6/VBoxContainer" unique_id=1054637239]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Price: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemCell7" type="MarginContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer" unique_id=218249412]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell7" unique_id=1413730853]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell7/VBoxContainer" unique_id=1146317739]
+clip_contents = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell7/VBoxContainer/PanelContainer" unique_id=1672266471]
+layout_mode = 2
+texture = ExtResource("2_1g71r")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell7/VBoxContainer" unique_id=44599073]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Price: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemCell8" type="MarginContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer" unique_id=1893574369]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell8" unique_id=26364597]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell8/VBoxContainer" unique_id=853555402]
+clip_contents = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell8/VBoxContainer/PanelContainer" unique_id=2103162917]
+layout_mode = 2
+texture = ExtResource("2_1g71r")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell8/VBoxContainer" unique_id=1228296033]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Price: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemCell9" type="MarginContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer" unique_id=389993833]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell9" unique_id=1755860373]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell9/VBoxContainer" unique_id=2104851187]
+clip_contents = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell9/VBoxContainer/PanelContainer" unique_id=213083411]
+layout_mode = 2
+texture = ExtResource("2_1g71r")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell9/VBoxContainer" unique_id=854864696]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Price: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemCell10" type="MarginContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer" unique_id=1380471875]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell10" unique_id=1554980504]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell10/VBoxContainer" unique_id=1406854997]
+clip_contents = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell10/VBoxContainer/PanelContainer" unique_id=1550784403]
+layout_mode = 2
+texture = ExtResource("2_1g71r")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell10/VBoxContainer" unique_id=1200863090]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Price: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemCell11" type="MarginContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer" unique_id=549708275]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell11" unique_id=18103207]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell11/VBoxContainer" unique_id=2112782729]
+clip_contents = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell11/VBoxContainer/PanelContainer" unique_id=614245034]
+layout_mode = 2
+texture = ExtResource("2_1g71r")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell11/VBoxContainer" unique_id=533241749]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Price: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemCell12" type="MarginContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer" unique_id=1301103478]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell12" unique_id=714383286]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell12/VBoxContainer" unique_id=1190152169]
+clip_contents = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell12/VBoxContainer/PanelContainer" unique_id=1784955021]
+layout_mode = 2
+texture = ExtResource("2_1g71r")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell12/VBoxContainer" unique_id=122914271]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Price: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemCell13" type="MarginContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer" unique_id=400472136]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell13" unique_id=1612309831]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell13/VBoxContainer" unique_id=1994421673]
+clip_contents = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell13/VBoxContainer/PanelContainer" unique_id=445999729]
+layout_mode = 2
+texture = ExtResource("2_1g71r")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/HBoxContainer/ItemCell13/VBoxContainer" unique_id=748391299]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Price: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1423750606]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -275.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer" unique_id=1380475780]
+layout_mode = 2
+texture = ExtResource("4_1hecs")
+
+[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=1853191560]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 109.0
+offset_top = 154.0
+offset_right = 704.0
+offset_bottom = 226.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1hecs")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2" unique_id=2011035639]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer2/HBoxContainer" unique_id=1514904110]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBox_jpxio")
+text = "Consoles"
+
+[node name="Button2" type="Button" parent="PanelContainer2/HBoxContainer" unique_id=234256489]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_eetfh")
+text = "Backgrounds"
+
+[node name="Button3" type="Button" parent="PanelContainer2/HBoxContainer" unique_id=1827043349]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBox_nj4jc")
+text = "Cells"
+
+[node name="BackButton" parent="." unique_id=500648264 instance=ExtResource("3_v0jmt")]
+layout_mode = 0
+offset_left = 1811.0
+offset_top = 57.0
+offset_right = 1855.0
+offset_bottom = 101.0
+next_scene = "uid://mw4u75ow5ddu"

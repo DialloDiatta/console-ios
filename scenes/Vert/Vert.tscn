@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://bwvryq8gg1w1t"]
+
+[ext_resource type="Script" uid="uid://dujkgep2fiqvo" path="res://scenes/Vert/vert.gd" id="1_ltxmb"]
+[ext_resource type="Texture2D" uid="uid://d2w0rd0bmugss" path="res://scenes/Vert/background.webp" id="2_0fey5"]
+[ext_resource type="PackedScene" uid="uid://bixljoltyauvt" path="res://scenes/back_button.tscn" id="2_f4rbu"]
+[ext_resource type="Texture2D" uid="uid://dirkk4jxypoih" path="res://scenes/Vert/layer.webp" id="3_w8fth"]
+[ext_resource type="Texture2D" uid="uid://cowgdt3vxv8xk" path="res://assets/ui/frame_1.webp" id="4_hqhor"]
+[ext_resource type="Texture2D" uid="uid://dsxuqii6crq3s" path="res://scenes/Vert/goal_panel_thick.webp" id="4_xmy2h"]
+[ext_resource type="Texture2D" uid="uid://b1jokw6nf5yhx" path="res://assets/ui/grid.webp" id="5_14vm3"]
+[ext_resource type="FontFile" uid="uid://ebcnyfgt7wv2" path="res://assets/fonts/Thuast-Demo.otf" id="5_xpgad"]
+[ext_resource type="PackedScene" uid="uid://c5ox4macy1vg1" path="res://scenes/frame.tscn" id="6_xpgad"]
+[ext_resource type="Texture2D" uid="uid://dt0e26up4ha6y" path="res://assets/ui/buttons/button_off.webp" id="7_84n2p"]
+[ext_resource type="Texture2D" uid="uid://dishqdfb6im5s" path="res://assets/ui/buttons/button_on.webp" id="8_maygo"]
+[ext_resource type="Script" uid="uid://chhukyg276xu4" path="res://scenes/Levels/random_int_2_consoles.gd" id="9_35r4m"]
+[ext_resource type="Script" uid="uid://dwftn63by2a50" path="res://resources/levels.gd" id="10_xmy2h"]
+[ext_resource type="AudioStream" uid="uid://ct0m30utky13j" path="res://assets/sfx/level-up-1.mp3" id="11_xmy2h"]
+
+[sub_resource type="Gradient" id="Gradient_ujcyr"]
+colors = PackedColorArray(0.32340002, 0.66, 0.66, 1, 0.83, 0.83, 0.83, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0fey5"]
+gradient = SubResource("Gradient_ujcyr")
+width = 765
+height = 30
+
+[sub_resource type="Resource" id="Resource_w8fth"]
+script = ExtResource("10_xmy2h")
+level_name = "Vert"
+scene_path = "uid://bwvryq8gg1w1t"
+lowest = 1
+highest = 15
+wait_time = 10.0
+metadata/_custom_type_script = "uid://dwftn63by2a50"
+
+[node name="Vert" type="CanvasLayer" unique_id=1435129578]
+layer = 0
+script = ExtResource("1_ltxmb")
+
+[node name="BG" type="TextureRect" parent="." unique_id=1668480631]
+custom_minimum_size = Vector2(1080, 1920)
+offset_right = 1080.0
+offset_bottom = 1920.0
+texture = ExtResource("2_0fey5")
+
+[node name="Layer" type="TextureRect" parent="." unique_id=414939377]
+offset_left = 61.0
+offset_top = 121.0
+offset_right = 1021.0
+offset_bottom = 1817.0
+size_flags_horizontal = 4
+texture = ExtResource("3_w8fth")
+
+[node name="BackButton" parent="." unique_id=500648264 instance=ExtResource("2_f4rbu")]
+offset_left = 958.0
+offset_top = 66.0
+offset_right = 1002.0
+offset_bottom = 110.0
+next_scene = "uid://mw4u75ow5ddu"
+
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1274586881]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -347.0
+offset_top = 464.0
+offset_right = 418.0
+offset_bottom = 494.0
+grow_horizontal = 2
+value = 100.0
+texture_progress = SubResource("GradientTexture2D_0fey5")
+tint_progress = Color(0.39999986, 1, 0, 1)
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=5041990]
+offset_left = 62.0
+offset_top = 221.00002
+offset_right = 1035.9993
+offset_bottom = 488.0
+scale = Vector2(0.9, 0.9)
+pivot_offset = Vector2(487, 133)
+texture = ExtResource("4_xmy2h")
+
+[node name="Label" type="Label" parent="TextureRect2" unique_id=894831959]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.50003
+offset_top = -126.05563
+offset_right = 187.5
+offset_bottom = 94.94437
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_xpgad")
+theme_override_font_sizes/font_size = 184
+text = "99 "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="TextureButton" parent="." unique_id=1870607752]
+unique_name_in_owner = true
+offset_left = 277.0
+offset_top = 1736.0
+offset_right = 764.0
+offset_bottom = 1816.0
+texture_normal = ExtResource("7_84n2p")
+texture_pressed = ExtResource("8_maygo")
+
+[node name="LevelControllerComponent" type="Control" parent="." unique_id=2053478549]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1120.0
+offset_top = -11.0
+offset_right = -1080.0
+offset_bottom = 29.0
+scale = Vector2(1.735, 1.735)
+script = ExtResource("9_35r4m")
+game_data = SubResource("Resource_w8fth")
+
+[node name="Frame3" type="Sprite2D" parent="LevelControllerComponent" unique_id=1564493293]
+visible = false
+position = Vector2(945, 538)
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("4_hqhor")
+
+[node name="TextureRect" type="TextureRect" parent="LevelControllerComponent" unique_id=1235984604]
+layout_mode = 0
+offset_left = 681.00006
+offset_top = 264.0
+offset_right = 1331.0
+offset_bottom = 915.0
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("5_14vm3")
+
+[node name="Frame2" parent="LevelControllerComponent" unique_id=1755893079 instance=ExtResource("6_xpgad")]
+layout_mode = 0
+offset_left = 733.0
+offset_top = 324.0
+offset_right = 1137.0
+offset_bottom = 724.0
+scale = Vector2(1.1269451, 1.1269451)
+
+[node name="Timer" type="Timer" parent="." unique_id=1038166286]
+unique_name_in_owner = true
+wait_time = 10.0
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1460924925]
+unique_name_in_owner = true
+stream = ExtResource("11_xmy2h")
+
+[connection signal="pressed" from="PlayButton" to="LevelControllerComponent" method="_on_play_button_pressed"]
+[connection signal="timeout" from="Timer" to="LevelControllerComponent" method="_on_timer_timeout"]

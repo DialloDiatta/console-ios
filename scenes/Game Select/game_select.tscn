@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://5el4h5j13d6u"]
+
+[ext_resource type="Texture2D" uid="uid://xcqikpannme8" path="res://assets/ui/hexagon_textured_background.png" id="1_famo4"]
+[ext_resource type="PackedScene" uid="uid://jmes1xy1ammy" path="res://scenes/Game Select/game_select_button.tscn" id="2_ohrrm"]
+[ext_resource type="Script" uid="uid://dwftn63by2a50" path="res://resources/levels.gd" id="4_85r7a"]
+[ext_resource type="PackedScene" uid="uid://bixljoltyauvt" path="res://scenes/back_button.tscn" id="4_jexod"]
+
+[sub_resource type="Resource" id="Resource_85r7a"]
+script = ExtResource("4_85r7a")
+level_name = "Single"
+scene_path = "uid://do4rxvr23k86d"
+lowest = 1
+highest = 15
+metadata/_custom_type_script = "uid://dwftn63by2a50"
+
+[sub_resource type="Resource" id="Resource_ohrrm"]
+script = ExtResource("4_85r7a")
+level_name = "Double"
+scene_path = "uid://b2ppeb5nwie70"
+lowest = 16
+highest = 32
+metadata/_custom_type_script = "uid://dwftn63by2a50"
+
+[node name="GameSelect" type="Control" unique_id=1016481436]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=564654358]
+layout_mode = 0
+offset_left = -129.0
+offset_top = -174.0
+offset_right = 2027.0
+offset_bottom = 1264.2697
+texture = ExtResource("1_famo4")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=247337793]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer" unique_id=323485370]
+custom_minimum_size = Vector2(1700, 600)
+layout_mode = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/ScrollContainer" unique_id=2126267488]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/ScrollContainer/CenterContainer" unique_id=334909994]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="GameSelectButton2" parent="CenterContainer/ScrollContainer/CenterContainer/HBoxContainer" unique_id=1250880618 instance=ExtResource("2_ohrrm")]
+layout_mode = 2
+level_data = SubResource("Resource_85r7a")
+
+[node name="GameSelectButton" parent="CenterContainer/ScrollContainer/CenterContainer/HBoxContainer" unique_id=279058868 instance=ExtResource("2_ohrrm")]
+layout_mode = 2
+level_data = SubResource("Resource_ohrrm")
+
+[node name="BackButton" parent="." unique_id=500648264 instance=ExtResource("4_jexod")]
+layout_mode = 0
+offset_left = 1815.0
+offset_top = 60.0
+offset_right = 1859.0
+offset_bottom = 104.0
+next_scene = "uid://mw4u75ow5ddu"

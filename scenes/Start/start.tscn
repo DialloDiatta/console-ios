@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bhvjci7d64ij8"]
+
+[ext_resource type="Script" uid="uid://b66uony2ohwt" path="res://scenes/Start/start.gd" id="1_vdoqo"]
+[ext_resource type="Texture2D" uid="uid://cvbqd8jmdi8w2" path="res://assets/ui/start_background.png" id="2_y8pua"]
+[ext_resource type="Texture2D" uid="uid://d0l6cht0ngfvs" path="res://assets/freedom_units_logo.webp" id="3_j05i8"]
+
+[sub_resource type="Gradient" id="Gradient_y8pua"]
+offsets = PackedFloat32Array(0, 0.61926603, 1)
+colors = PackedColorArray(0.07353883, 0.18397227, 0.3075132, 1, 0.07450981, 0.18431373, 0.30588236, 0.4, 0.34117648, 0.34117648, 0.34117648, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j05i8"]
+gradient = SubResource("Gradient_y8pua")
+fill_from = Vector2(1, 1)
+
+[node name="Start" type="Control" unique_id=1767543391]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vdoqo")
+
+[node name="Background" type="TextureRect" parent="." unique_id=954374098]
+layout_mode = 0
+offset_right = 1931.4176
+offset_bottom = 1087.0
+texture = ExtResource("2_y8pua")
+
+[node name="Fade" type="TextureRect" parent="." unique_id=1929934069]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -174.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture2D_j05i8")
+
+[node name="Label" type="RichTextLabel" parent="Fade" unique_id=1847267378]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -214.0
+offset_top = -22.5
+offset_right = 214.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[pulse freq=1.0 color=#ffffff40 ease=-2.0]Click anywhere to continue.[/pulse]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Logo" type="TextureRect" parent="." unique_id=442052327]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 50.0
+offset_right = 2136.0
+offset_bottom = 780.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_j05i8")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

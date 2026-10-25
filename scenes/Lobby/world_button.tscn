@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bnqm2rrpe6dje"]
+
+[ext_resource type="Texture2D" uid="uid://ctou3wtfbg40j" path="res://assets/icons/world_icon_large.webp" id="1_rfdfx"]
+[ext_resource type="Script" uid="uid://c1tg3uttcr4uf" path="res://scenes/Lobby/world_button.gd" id="2_vg3ul"]
+[ext_resource type="Texture2D" uid="uid://dufyu7kfcq2ua" path="res://assets/icons/Circle.webp" id="3_rmyao"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmyao"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Curve" id="Curve_bivpj"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.8416667, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.6741624, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_rmyao"]
+offsets = PackedFloat32Array(0.74553573, 1)
+colors = PackedColorArray(1, 0, 0.93333334, 1, 0, 0.8980392, 1, 1)
+
+[node name="WorldButton" type="PanelContainer" unique_id=1124150044]
+offset_right = 299.0
+offset_bottom = 300.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_rmyao")
+script = ExtResource("2_vg3ul")
+
+[node name="Emitter" type="CPUParticles2D" parent="." unique_id=1713412825]
+unique_name_in_owner = true
+position = Vector2(143, 157)
+amount = 40
+texture = ExtResource("3_rmyao")
+lifetime = 1.5
+emission_shape = 1
+emission_sphere_radius = 52.4
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 125.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_bivpj")
+color_ramp = SubResource("Gradient_rmyao")
+
+[node name="WorldButton" type="TextureButton" parent="." unique_id=1709086415]
+layout_mode = 2
+texture_normal = ExtResource("1_rfdfx")
+
+[connection signal="pressed" from="WorldButton" to="." method="_on_world_button_pressed"]

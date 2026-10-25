@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://3adgexutwgj4"]
+
+[node name="InfoCell" type="HBoxContainer" unique_id=2090912124]
+
+[node name="Label" type="Label" parent="." unique_id=460474680]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Completed:"
+
+[node name="Stat" type="Label" parent="." unique_id=1158699240]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "................Score"
+horizontal_alignment = 2

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cbvuwq30nfe68"]
+
+[ext_resource type="Shader" uid="uid://bjxd30gwia84h" path="res://resources/shaders/fire.tres" id="1_1mop7"]
+[ext_resource type="Script" uid="uid://iagh7nab3ksu" path="res://scenes/Components/fire.gd" id="1_671wu"]
+[ext_resource type="Texture2D" uid="uid://c2osylhvbsnle" path="res://assets/textures/T_Noise_HU85k.png" id="2_1mop7"]
+
+[sub_resource type="Gradient" id="Gradient_671wu"]
+offsets = PackedFloat32Array(0, 0.34183672, 0.5153061, 0.8061224, 1)
+colors = PackedColorArray(1, 0, 0.9333334, 0, 4.165, 0, 3.8983338, 0.4117647, 1, 0.24000001, 0.9366669, 0.7058824, 0.051442176, 0.7720409, 1, 0.9429772, 0, 0.9000001, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kfi6y"]
+gradient = SubResource("Gradient_671wu")
+
+[sub_resource type="Gradient" id="Gradient_lysms"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jrv45"]
+gradient = SubResource("Gradient_lysms")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_kfi6y"]
+colors = PackedColorArray(0, 0, 0, 1, 0.44, 0.44, 0.44, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lysms"]
+gradient = SubResource("Gradient_kfi6y")
+fill_from = Vector2(0, 0.95726496)
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_1mop7"]
+offsets = PackedFloat32Array(0.11734694, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_671wu"]
+gradient = SubResource("Gradient_1mop7")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0.6837607)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jrv45"]
+shader = ExtResource("1_1mop7")
+shader_parameter/Speed = Vector2(0, 0.515)
+shader_parameter/Scale = Vector2(1, 1)
+shader_parameter/TextureBase = ExtResource("2_1mop7")
+shader_parameter/TextureAdd = SubResource("GradientTexture2D_lysms")
+shader_parameter/TextureSubtract = SubResource("GradientTexture2D_671wu")
+shader_parameter/ColorPalette = SubResource("GradientTexture1D_kfi6y")
+shader_parameter/DisappeaTexture = SubResource("GradientTexture2D_jrv45")
+shader_parameter/Step = 0.0
+
+[node name="Fire" type="Control" unique_id=986639746]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_671wu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=184540327]
+material = SubResource("ShaderMaterial_jrv45")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

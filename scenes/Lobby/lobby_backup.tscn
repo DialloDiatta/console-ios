@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://cweveb5kq72sf"]
+
+[ext_resource type="Script" uid="uid://dqwyl6x5arpea" path="res://scenes/Lobby/lobby.gd" id="1_jqxii"]
+[ext_resource type="Texture2D" uid="uid://1dqoa2negfgt" path="res://assets/ui/textured_background.png" id="2_onmph"]
+[ext_resource type="Texture2D" uid="uid://dr3rbwhygq60a" path="res://assets/characters/Banaka.webp" id="3_amk6n"]
+[ext_resource type="Texture2D" uid="uid://btb2jfylvnofv" path="res://icon.svg" id="4_ibkxy"]
+[ext_resource type="PackedScene" uid="uid://jmes1xy1ammy" path="res://scenes/Game Select/game_select_button.tscn" id="5_623ap"]
+[ext_resource type="Script" uid="uid://dwftn63by2a50" path="res://resources/levels.gd" id="6_udivj"]
+
+[sub_resource type="Resource" id="Resource_qxqqe"]
+script = ExtResource("6_udivj")
+level_name = "PLAY"
+scene_path = "uid://5el4h5j13d6u"
+metadata/_custom_type_script = "uid://dwftn63by2a50"
+
+[sub_resource type="Resource" id="Resource_6qw64"]
+script = ExtResource("6_udivj")
+level_name = "TRAINING"
+scene_path = "uid://b8nnpj7chnomf"
+metadata/_custom_type_script = "uid://dwftn63by2a50"
+
+[node name="Lobby" type="Control" unique_id=870613948]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jqxii")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1859879081]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TexturedBackground" type="Sprite2D" parent="." unique_id=1502939711]
+position = Vector2(941.6251, 532.32635)
+scale = Vector2(1.3294787, 1.3294787)
+texture = ExtResource("2_onmph")
+
+[node name="Banaka" type="Sprite2D" parent="." unique_id=223138290]
+position = Vector2(429, 861)
+texture = ExtResource("3_amk6n")
+flip_h = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=803107744]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -169.0
+offset_top = -262.0
+offset_right = -41.0
+offset_bottom = 262.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureButton" parent="VBoxContainer" unique_id=1909618592]
+layout_mode = 2
+texture_normal = ExtResource("4_ibkxy")
+
+[node name="TextureRect2" type="TextureButton" parent="VBoxContainer" unique_id=224952244]
+layout_mode = 2
+texture_normal = ExtResource("4_ibkxy")
+
+[node name="TextureRect3" type="TextureButton" parent="VBoxContainer" unique_id=1633530782]
+layout_mode = 2
+texture_normal = ExtResource("4_ibkxy")
+
+[node name="TextureRect4" type="TextureButton" parent="VBoxContainer" unique_id=1018481435]
+layout_mode = 2
+texture_normal = ExtResource("4_ibkxy")
+
+[node name="GameSelectButton" parent="." unique_id=1250880618 instance=ExtResource("5_623ap")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.0
+offset_top = -407.0
+offset_right = 230.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+level_data = SubResource("Resource_qxqqe")
+
+[node name="GameSelectButton2" parent="." unique_id=891645205 instance=ExtResource("5_623ap")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 305.0
+offset_top = -34.0
+offset_right = 765.0
+offset_bottom = 425.0
+grow_horizontal = 2
+grow_vertical = 2
+level_data = SubResource("Resource_6qw64")

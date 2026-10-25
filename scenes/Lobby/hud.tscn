@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://cuf27iifvufnu"]
+
+[ext_resource type="Script" uid="uid://cml7ai4odr1sf" path="res://scenes/Lobby/hud.gd" id="1_3lj1s"]
+[ext_resource type="Texture2D" uid="uid://btb2jfylvnofv" path="res://icon.svg" id="2_itdwy"]
+[ext_resource type="FontFile" uid="uid://ebcnyfgt7wv2" path="res://assets/fonts/Thuast-Demo.otf" id="3_5eyq2"]
+[ext_resource type="Texture2D" uid="uid://cai28013ihf44" path="res://assets/icons/Profile_Icon.webp" id="3_8wwg0"]
+[ext_resource type="PackedScene" uid="uid://1ka3qvq1x3ww" path="res://scenes/Lobby/level_select_button.tscn" id="4_6jq7e"]
+[ext_resource type="Texture2D" uid="uid://c3iw0fpjuly3a" path="res://assets/icons/Shop_Icon.webp" id="4_8tmxs"]
+[ext_resource type="Texture2D" uid="uid://l32wcahuxf8a" path="res://assets/icons/Star_Icon.webp" id="5_5eyq2"]
+[ext_resource type="Texture2D" uid="uid://c3fe8r2rmtknr" path="res://assets/icons/Gear_Icon.webp" id="6_6jq7e"]
+[ext_resource type="Script" uid="uid://gp6s0pe3jfew" path="res://scenes/nav_button.gd" id="7_8tmxs"]
+
+[sub_resource type="Gradient" id="Gradient_8wwg0"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.34509805)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8tmxs"]
+gradient = SubResource("Gradient_8wwg0")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5eyq2"]
+content_margin_top = 17.0
+
+[node name="HUD" type="CanvasLayer" unique_id=348883161]
+script = ExtResource("1_3lj1s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=551008696]
+visible = false
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -262.0
+offset_right = -67.0
+offset_bottom = 262.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureButton" parent="VBoxContainer" unique_id=1449348072]
+layout_mode = 2
+texture_normal = ExtResource("2_itdwy")
+
+[node name="TextureRect2" type="TextureButton" parent="VBoxContainer" unique_id=2147378763]
+layout_mode = 2
+texture_normal = ExtResource("2_itdwy")
+
+[node name="TextureRect3" type="TextureButton" parent="VBoxContainer" unique_id=1622235814]
+layout_mode = 2
+texture_normal = ExtResource("2_itdwy")
+
+[node name="TextureRect4" type="TextureButton" parent="VBoxContainer" unique_id=82405414]
+layout_mode = 2
+texture_normal = ExtResource("2_itdwy")
+
+[node name="Fade" type="TextureRect" parent="." unique_id=502936982]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -930.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_8tmxs")
+
+[node name="PopUp" type="PanelContainer" parent="." unique_id=745034685]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -880.0
+offset_top = -375.0
+offset_right = -280.0
+offset_bottom = 375.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PopUp" unique_id=1885006103]
+custom_minimum_size = Vector2(600, 750)
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopUp/MarginContainer" unique_id=1295328036]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="PopUp/MarginContainer/VBoxContainer" unique_id=1775024776]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(425, 80)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/outline_size = 30
+theme_override_fonts/normal_font = ExtResource("3_5eyq2")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "[wave]Level Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PopUp/MarginContainer/VBoxContainer" unique_id=1450122100]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5eyq2")
+
+[node name="SelectContainer" type="VBoxContainer" parent="PopUp/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1388709051]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/separation = 40
+
+[node name="LevelSelectButton" parent="PopUp/MarginContainer/VBoxContainer/ScrollContainer/SelectContainer" unique_id=157120266 instance=ExtResource("4_6jq7e")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=492848887]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -473.0
+offset_top = 64.0
+offset_right = -91.0
+offset_bottom = 118.0
+grow_horizontal = 0
+theme_override_constants/separation = 60
+
+[node name="ProfileButton" type="TextureButton" parent="HBoxContainer" unique_id=1127848109]
+layout_mode = 2
+texture_normal = ExtResource("3_8wwg0")
+
+[node name="ShopButton" type="TextureButton" parent="HBoxContainer" unique_id=97728102]
+layout_mode = 2
+texture_normal = ExtResource("4_8tmxs")
+script = ExtResource("7_8tmxs")
+next_scene = "uid://kgiddh5kqa3w"
+
+[node name="AchievementsButton" type="TextureButton" parent="HBoxContainer" unique_id=1748810269]
+layout_mode = 2
+texture_normal = ExtResource("5_5eyq2")
+
+[node name="SettingsButton" type="TextureButton" parent="HBoxContainer" unique_id=246354365]
+layout_mode = 2
+texture_normal = ExtResource("6_6jq7e")
+script = ExtResource("7_8tmxs")
+next_scene = "uid://dqbckooi387oj"

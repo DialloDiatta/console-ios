@@ -1,0 +1,221 @@
+[gd_scene format=3 uid="uid://b2ppeb5nwie70"]
+
+[ext_resource type="Script" uid="uid://chhukyg276xu4" path="res://scenes/Levels/random_int_2_consoles.gd" id="1_10jbh"]
+[ext_resource type="Script" uid="uid://dwftn63by2a50" path="res://resources/levels.gd" id="2_5kiid"]
+[ext_resource type="Texture2D" uid="uid://1dqoa2negfgt" path="res://assets/ui/textured_background.png" id="3_8maoj"]
+[ext_resource type="PackedScene" uid="uid://1gbgsin2f27j" path="res://scenes/SetGamePopUp.tscn" id="3_hou50"]
+[ext_resource type="Texture2D" uid="uid://cowgdt3vxv8xk" path="res://assets/ui/frame_1.webp" id="4_mqsja"]
+[ext_resource type="PackedScene" uid="uid://c5ox4macy1vg1" path="res://scenes/frame.tscn" id="5_efaju"]
+[ext_resource type="PackedScene" uid="uid://cbvuwq30nfe68" path="res://scenes/Components/fire.tscn" id="5_oiqgm"]
+[ext_resource type="Texture2D" uid="uid://d1r466kq3vjoe" path="res://assets/ui/banner.png" id="6_5af6i"]
+[ext_resource type="AudioStream" uid="uid://ct0m30utky13j" path="res://assets/sfx/level-up-1.mp3" id="7_pm1dr"]
+[ext_resource type="PackedScene" uid="uid://bixljoltyauvt" path="res://scenes/back_button.tscn" id="8_5kiid"]
+[ext_resource type="Shader" uid="uid://c6g2qeejy84bl" path="res://resources/shaders/glass.gdshader" id="8_y3lma"]
+[ext_resource type="PackedScene" uid="uid://sxpjpupm43" path="res://scenes/CompleteScreen/complete_screen.tscn" id="12_5h12d"]
+
+[sub_resource type="Resource" id="Resource_hou50"]
+script = ExtResource("2_5kiid")
+scene_path = "uid://1gbgsin2f27j"
+lowest = 16
+highest = 48
+metadata/_custom_type_script = "uid://dwftn63by2a50"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5kiid"]
+shader = ExtResource("8_y3lma")
+shader_parameter/brightness = 0.1499999966472
+shader_parameter/chromatic_shift_amount = 0.2
+shader_parameter/bend_amount = 0.4
+shader_parameter/blur_amount = 4.0000000596048
+shader_parameter/grain_amount = 0.05
+shader_parameter/curve_light_blend = 0.5
+shader_parameter/rim_light_blend = 0.8
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3lma"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.34509805, 0.80784315, 0.5294118, 0.92941177)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[node name="Main" type="Control" unique_id=229827327]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_10jbh")
+game_data = SubResource("Resource_hou50")
+pop_up_scene = ExtResource("3_hou50")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1970463370]
+position = Vector2(945, 568)
+scale = Vector2(1.3426201, 1.3426201)
+texture = ExtResource("3_8maoj")
+
+[node name="Fire" parent="." unique_id=986639746 instance=ExtResource("5_oiqgm")]
+layout_mode = 1
+
+[node name="Control2" type="Control" parent="." unique_id=1292737446]
+anchors_preset = 0
+offset_left = 281.0
+offset_top = 64.0
+offset_right = 321.0
+offset_bottom = 104.0
+
+[node name="Frame3" type="Sprite2D" parent="Control2" unique_id=708235007]
+position = Vector2(945, 538)
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("4_mqsja")
+
+[node name="Frame2" parent="Control2" unique_id=544095981 node_paths=PackedStringArray("next_frame") instance=ExtResource("5_efaju")]
+layout_mode = 0
+offset_left = 762.0
+offset_top = 339.0
+offset_right = 1166.0
+offset_bottom = 739.0
+next_frame = NodePath("../../Control3/Frame3")
+
+[node name="Control3" type="Control" parent="." unique_id=1259648526]
+anchors_preset = 0
+offset_left = 298.0
+offset_top = 62.0
+offset_right = 338.0
+offset_bottom = 102.0
+
+[node name="Frame4" type="Sprite2D" parent="Control3" unique_id=1074791913]
+position = Vector2(411, 538)
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("4_mqsja")
+
+[node name="Frame3" parent="Control3" unique_id=1352943619 instance=ExtResource("5_efaju")]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 337.0
+offset_right = 627.0
+offset_bottom = 737.0
+modifier = 16
+
+[node name="Banner" type="Sprite2D" parent="." unique_id=1988383862]
+position = Vector2(954, 69)
+scale = Vector2(0.3394781, 0.3394781)
+texture = ExtResource("6_5af6i")
+
+[node name="Timer" type="Timer" parent="." unique_id=951845022]
+unique_name_in_owner = true
+wait_time = 2.5
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=774621636]
+unique_name_in_owner = true
+stream = ExtResource("7_pm1dr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=415768729]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -121.0
+offset_right = 60.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 40
+
+[node name="PlayButton" type="Button" parent="HBoxContainer" unique_id=479376499]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "Play"
+
+[node name="SelectGameButton" type="Button" parent="HBoxContainer" unique_id=842325435]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "Select Game"
+
+[node name="Panel" type="Panel" parent="." unique_id=129103886]
+material = SubResource("ShaderMaterial_5kiid")
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 322.0
+offset_top = 96.0
+offset_right = -322.0
+offset_bottom = 274.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y3lma")
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel" unique_id=1851944060]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 237.0
+offset_top = -25.0
+offset_right = -237.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_272bh")
+value = 18.4
+show_percentage = false
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel" unique_id=293578579]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/CenterContainer" unique_id=1316112027]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/CenterContainer/VBoxContainer" unique_id=986321789]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "Ready..."
+horizontal_alignment = 1
+
+[node name="BackButton" parent="." unique_id=500648264 instance=ExtResource("8_5kiid")]
+layout_mode = 0
+offset_left = 1818.0
+offset_top = 59.0
+offset_right = 1862.0
+offset_bottom = 103.0
+next_scene = "uid://mw4u75ow5ddu"
+
+[node name="StreakTimer" type="Timer" parent="." unique_id=688739918]
+unique_name_in_owner = true
+
+[node name="CompleteScreen" parent="." unique_id=1038754103 instance=ExtResource("12_5h12d")]
+layout_mode = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/SelectGameButton" to="." method="_on_select_game_button_pressed"]

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://baf2vjwhflocc"]
+
+[ext_resource type="Script" uid="uid://cknn7jnrryt3m" path="res://scenes/Components/trail.gd" id="1_pb6jn"]
+
+[sub_resource type="Curve" id="Curve_pb6jn"]
+_data = [Vector2(0.0030303001, 1), 0.0, 0.0, 0, 0, Vector2(0.7454546, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_djlxp"]
+colors = PackedColorArray(1, 0, 0.93333334, 1, 0, 0.8980392, 1, 1)
+
+[node name="Trail" type="Line2D" unique_id=916076833]
+process_mode = 3
+z_index = 10
+points = PackedVector2Array(372, 179)
+width = 30.0
+width_curve = SubResource("Curve_pb6jn")
+gradient = SubResource("Gradient_djlxp")
+begin_cap_mode = 2
+script = ExtResource("1_pb6jn")
+MAX_LENGTH = 15

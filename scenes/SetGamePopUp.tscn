@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://1gbgsin2f27j"]
+
+[ext_resource type="Texture2D" uid="uid://bx1lnpgibu5kr" path="res://assets/ui/tv_frame.webp" id="1_3txs5"]
+[ext_resource type="Script" uid="uid://qewxu8jokk6a" path="res://scenes/set_game_pop_up.gd" id="1_6iiu3"]
+[ext_resource type="Shader" uid="uid://bil1vjalltxef" path="res://resources/shaders/blur.gdshader" id="2_1ves2"]
+[ext_resource type="PackedScene" uid="uid://jmes1xy1ammy" path="res://scenes/Game Select/game_select_button.tscn" id="3_stnih"]
+[ext_resource type="Script" uid="uid://dwftn63by2a50" path="res://resources/levels.gd" id="4_iu1rf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hnucx"]
+shader = ExtResource("2_1ves2")
+shader_parameter/blur_amount = 2.0000001899999997
+shader_parameter/mix_amount = 0.30000001425
+shader_parameter/color_over = Color(0, 0, 0, 1)
+
+[sub_resource type="Resource" id="Resource_iu1rf"]
+script = ExtResource("4_iu1rf")
+level_name = "Easy"
+level_id = "BITRIC 8"
+highest = 8
+metadata/_custom_type_script = "uid://dwftn63by2a50"
+
+[sub_resource type="Resource" id="Resource_hnucx"]
+script = ExtResource("4_iu1rf")
+level_name = "Intermediate"
+level_id = "BITRIC 10"
+highest = 10
+metadata/_custom_type_script = "uid://dwftn63by2a50"
+
+[sub_resource type="Resource" id="Resource_ltq7p"]
+script = ExtResource("4_iu1rf")
+level_name = "Awesome"
+level_id = "BITRIC 12"
+highest = 12
+metadata/_custom_type_script = "uid://dwftn63by2a50"
+
+[sub_resource type="Resource" id="Resource_1ves2"]
+script = ExtResource("4_iu1rf")
+level_name = "Advanced"
+level_id = "BITRIC 16"
+lowest = 16
+highest = 32
+metadata/_custom_type_script = "uid://dwftn63by2a50"
+
+[node name="SetGamePopUp" type="Control" unique_id=520764545]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6iiu3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=935278814]
+material = SubResource("ShaderMaterial_hnucx")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 11.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0.4117647)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1838473877]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TvFrame" type="TextureRect" parent="CenterContainer" unique_id=1928043037]
+layout_mode = 2
+texture = ExtResource("1_3txs5")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/TvFrame" unique_id=842982960]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 140
+theme_override_constants/margin_top = 140
+theme_override_constants/margin_right = 140
+theme_override_constants/margin_bottom = 140
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/TvFrame/MarginContainer" unique_id=1391641930]
+layout_mode = 2
+
+[node name="ButtonContainer" type="HBoxContainer" parent="CenterContainer/TvFrame/MarginContainer/CenterContainer" unique_id=26935245]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Button" parent="CenterContainer/TvFrame/MarginContainer/CenterContainer/ButtonContainer" unique_id=704622667 instance=ExtResource("3_stnih")]
+layout_mode = 2
+level_data = SubResource("Resource_iu1rf")
+
+[node name="Button2" parent="CenterContainer/TvFrame/MarginContainer/CenterContainer/ButtonContainer" unique_id=462464 instance=ExtResource("3_stnih")]
+layout_mode = 2
+level_data = SubResource("Resource_hnucx")
+
+[node name="Button3" parent="CenterContainer/TvFrame/MarginContainer/CenterContainer/ButtonContainer" unique_id=665149151 instance=ExtResource("3_stnih")]
+layout_mode = 2
+level_data = SubResource("Resource_ltq7p")
+
+[node name="Button4" parent="CenterContainer/TvFrame/MarginContainer/CenterContainer/ButtonContainer" unique_id=1960503015 instance=ExtResource("3_stnih")]
+layout_mode = 2
+level_data = SubResource("Resource_1ves2")
+
+[node name="Label" type="Label" parent="." unique_id=1187121553]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.5
+offset_top = -78.0
+offset_right = 88.5
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Click anwhere to close."
+horizontal_alignment = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

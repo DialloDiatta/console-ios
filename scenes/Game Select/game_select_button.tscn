@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://jmes1xy1ammy"]
+
+[ext_resource type="Texture2D" uid="uid://cukaro81j6pe" path="res://assets/ui/blank.webp" id="1_2rhk5"]
+[ext_resource type="Script" uid="uid://bmi47reolug8k" path="res://scenes/Game Select/game_select_button.gd" id="1_p3oq8"]
+
+[node name="GameSelectButton" type="TextureButton" unique_id=1250880618]
+texture_normal = ExtResource("1_2rhk5")
+script = ExtResource("1_p3oq8")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1067308577]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CenterContainer" unique_id=1645852210]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Game Mode"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

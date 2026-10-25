@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://sxpjpupm43"]
+
+[ext_resource type="Shader" uid="uid://bil1vjalltxef" path="res://resources/shaders/blur.gdshader" id="1_hpk40"]
+[ext_resource type="Script" uid="uid://w058g8v37h0h" path="res://scenes/CompleteScreen/complete_screen.gd" id="2_l4w1x"]
+[ext_resource type="Script" uid="uid://qf7b1o5clng" path="res://scenes/CompleteScreen/info_cell.gd" id="3_nfbx3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mn57v"]
+shader = ExtResource("1_hpk40")
+shader_parameter/blur_amount = 2.262000202445
+shader_parameter/mix_amount = 0.0
+shader_parameter/color_over = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cjnsu"]
+bg_color = Color(0.1, 0.1, 0.1, 0.96862745)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ulag"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="CompleteScreen" type="Control" unique_id=1038754103]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_l4w1x")
+
+[node name="Blur" type="ColorRect" parent="." unique_id=78262878]
+material = SubResource("ShaderMaterial_mn57v")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Box" type="PanelContainer" parent="Blur" unique_id=1022964619]
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cjnsu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Blur/Box" unique_id=1806369986]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="Blur/Box/VBoxContainer" unique_id=755570338]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 42
+text = "Level Complete"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Blur/Box/VBoxContainer" unique_id=2122162773]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
+
+[node name="InfoContainer" type="VBoxContainer" parent="Blur/Box/VBoxContainer/MarginContainer" unique_id=1394331692]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="InfoCell" type="HBoxContainer" parent="Blur/Box/VBoxContainer/MarginContainer/InfoContainer" unique_id=698736774]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("3_nfbx3")
+
+[node name="Label" type="Label" parent="Blur/Box/VBoxContainer/MarginContainer/InfoContainer/InfoCell" unique_id=2055446759]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Completed:"
+
+[node name="Stat" type="Label" parent="Blur/Box/VBoxContainer/MarginContainer/InfoContainer/InfoCell" unique_id=1964982099]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "................Score"
+horizontal_alignment = 2
+
+[node name="Buttons" type="HBoxContainer" parent="Blur" unique_id=2094871598]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -237.0
+offset_right = 20.0
+offset_bottom = -197.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 50
+
+[node name="Replay" type="Button" parent="Blur/Buttons" unique_id=363879765]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ulag")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0ulag")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0ulag")
+text = "Replay"
+
+[node name="Next" type="Button" parent="Blur/Buttons" unique_id=1881695560]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ulag")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0ulag")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0ulag")
+text = "Next"
+
+[connection signal="pressed" from="Blur/Buttons/Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="Blur/Buttons/Next" to="." method="_on_next_pressed"]

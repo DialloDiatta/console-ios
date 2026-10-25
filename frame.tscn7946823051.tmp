@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://c5ox4macy1vg1"]
+
+[ext_resource type="Script" uid="uid://cltbttcmyauvn" path="res://frame.gd" id="1_bs1d3"]
+[ext_resource type="PackedScene" uid="uid://hs7sacf4qlxt" path="res://grid_cell.tscn" id="1_m7nv7"]
+
+[node name="Frame" type="GridContainer" unique_id=1755893079]
+columns = 4
+script = ExtResource("1_bs1d3")
+
+[node name="GridCell" parent="." unique_id=1357093909 instance=ExtResource("1_m7nv7")]
+layout_mode = 2
+
+[node name="GridCell2" parent="." unique_id=1223305281 instance=ExtResource("1_m7nv7")]
+layout_mode = 2
+
+[node name="GridCell3" parent="." unique_id=880337169 instance=ExtResource("1_m7nv7")]
+layout_mode = 2
+
+[node name="GridCell4" parent="." unique_id=1058509354 instance=ExtResource("1_m7nv7")]
+layout_mode = 2
+
+[node name="GridCell5" parent="." unique_id=1147732348 instance=ExtResource("1_m7nv7")]
+layout_mode = 2
+
+[node name="GridCell6" parent="." unique_id=1743443024 instance=ExtResource("1_m7nv7")]
+layout_mode = 2
+
+[node name="GridCell7" parent="." unique_id=1239523427 instance=ExtResource("1_m7nv7")]
+layout_mode = 2
+
+[node name="GridCell8" parent="." unique_id=547247704 instance=ExtResource("1_m7nv7")]
+layout_mode = 2
+
+[node name="GridCell9" parent="." unique_id=1932629394 instance=ExtResource("1_m7nv7")]
+layout_mode = 2
+
+[node name="GridCell10" parent="." unique_id=895600670 instance=ExtResource("1_m7nv7")]
+layout_mode = 2
+
+[node name="GridCell11" parent="." unique_id=2131559729 instance=ExtResource("1_m7nv7")]
+layout_mode = 2
+
+[node name="GridCell12" parent="." unique_id=665642969 instance=ExtResource("1_m7nv7")]
+layout_mode = 2
+
+[node name="GridCell13" parent="." unique_id=1191274647 instance=ExtResource("1_m7nv7")]
+layout_mode = 2
+
+[node name="GridCell14" parent="." unique_id=170494924 instance=ExtResource("1_m7nv7")]
+layout_mode = 2
+
+[node name="GridCell15" parent="." unique_id=177518961 instance=ExtResource("1_m7nv7")]
+layout_mode = 2
+
+[node name="GridCell16" parent="." unique_id=18336024 instance=ExtResource("1_m7nv7")]
+layout_mode = 2

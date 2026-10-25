@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://1ka3qvq1x3ww"]
+
+[ext_resource type="FontFile" uid="uid://ebcnyfgt7wv2" path="res://assets/fonts/Thuast-Demo.otf" id="1_3r456"]
+
+[node name="LevelSelectButton" type="Button" unique_id=157120266]
+theme_override_fonts/font = ExtResource("1_3r456")
+theme_override_font_sizes/font_size = 61
+text = "Play!!"

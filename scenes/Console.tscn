@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://es3m4x8msx88"]
+
+[ext_resource type="Texture2D" uid="uid://5nbxbvghpmj4" path="res://assets/ui/connector.webp" id="1_6ll0r"]
+[ext_resource type="Script" uid="uid://n7ieghwymud4" path="res://scenes/console.gd" id="1_n3e2o"]
+[ext_resource type="PackedScene" uid="uid://c5ox4macy1vg1" path="res://scenes/frame.tscn" id="1_tqaav"]
+[ext_resource type="Texture2D" uid="uid://bk3glgw0n8pll" path="res://assets/ui/screen.webp" id="2_tysv4"]
+[ext_resource type="Texture2D" uid="uid://cdo43vu5xuyv3" path="res://assets/icons/x_icon.webp" id="4_tysv4"]
+[ext_resource type="Script" uid="uid://b6txx22b5fi3l" path="res://scenes/base_change_button.gd" id="6_nix5e"]
+
+[node name="Console" type="MarginContainer" unique_id=175419718]
+offset_right = 498.0
+offset_bottom = 497.0
+script = ExtResource("1_n3e2o")
+
+[node name="Connector" type="TextureRect" parent="." unique_id=1192615487]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("1_6ll0r")
+
+[node name="Screen" type="TextureRect" parent="." unique_id=1450464197]
+layout_mode = 2
+texture = ExtResource("2_tysv4")
+
+[node name="Line" type="ColorRect" parent="Screen" unique_id=391363907]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 60.0
+offset_top = 447.0
+offset_right = -60.0
+offset_bottom = 455.0
+grow_horizontal = 2
+pivot_offset = Vector2(549, 104)
+color = Color(0.20392157, 1, 0.5058824, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="Screen" unique_id=484335990]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame" parent="Screen/CenterContainer" unique_id=1755893079 instance=ExtResource("1_tqaav")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ButtonContainer" type="Control" parent="." unique_id=396257223]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="8" type="TextureButton" parent="ButtonContainer" unique_id=1981572710]
+modulate = Color(0.28725287, 0.8275295, 0.40076408, 1)
+layout_mode = 0
+offset_left = 449.0
+offset_top = 228.0
+offset_right = 493.0
+offset_bottom = 272.0
+texture_normal = ExtResource("4_tysv4")
+script = ExtResource("6_nix5e")
+active_position = Vector2(60, 245)
+
+[node name="10" type="TextureButton" parent="ButtonContainer" unique_id=292995391]
+modulate = Color(0.28725287, 0.8275295, 0.40076408, 1)
+layout_mode = 0
+offset_left = 222.0
+offset_top = 448.0
+offset_right = 266.0
+offset_bottom = 492.0
+texture_normal = ExtResource("4_tysv4")
+script = ExtResource("6_nix5e")
+active_position = Vector2(60, 450)
+
+[node name="12" type="TextureButton" parent="ButtonContainer" unique_id=820644426]
+modulate = Color(0.28725287, 0.8275295, 0.40076408, 1)
+layout_mode = 0
+offset_left = 448.0
+offset_top = 317.0
+offset_right = 492.0
+offset_bottom = 361.0
+texture_normal = ExtResource("4_tysv4")
+script = ExtResource("6_nix5e")
+active_position = Vector2(60, 340)
+
+[node name="16" type="TextureButton" parent="ButtonContainer" unique_id=342553107]
+modulate = Color(0.28725287, 0.8275295, 0.40076408, 1)
+layout_mode = 0
+offset_left = 435.0
+offset_top = 436.0
+offset_right = 479.0
+offset_bottom = 480.0
+texture_normal = ExtResource("4_tysv4")
+script = ExtResource("6_nix5e")
+active_position = Vector2(60, 445)

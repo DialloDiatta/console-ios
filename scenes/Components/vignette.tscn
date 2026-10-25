@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cw7egtdd3frrr"]
+
+[ext_resource type="Script" uid="uid://bqaw4aicriojl" path="res://scenes/Components/vignette.gd" id="1_hlrbt"]
+[ext_resource type="StyleBox" uid="uid://bvogp7fubhmli" path="res://resources/shaders/vignette_border_green.tres" id="2_o7ey6"]
+[ext_resource type="Shader" uid="uid://bh5wlxptxu4gu" path="res://resources/shaders/vignette.gdshader" id="3_r0xaq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jki7b"]
+shader = ExtResource("3_r0xaq")
+shader_parameter/alpha = 1.0
+shader_parameter/inner_radius = 0.330000015675
+shader_parameter/outer_radius = 2.0
+shader_parameter/vignette_rgb = Color(0.49803922, 0.7607843, 0.5019608, 1)
+
+[node name="Vignette" type="Control" unique_id=762074476]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 1
+script = ExtResource("1_hlrbt")
+
+[node name="Border" type="Panel" parent="." unique_id=1311729942]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_o7ey6")
+
+[node name="Gradient" type="ColorRect" parent="." unique_id=1872074040]
+material = SubResource("ShaderMaterial_jki7b")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

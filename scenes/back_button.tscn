@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bixljoltyauvt"]
+
+[ext_resource type="Texture2D" uid="uid://cdo43vu5xuyv3" path="res://assets/icons/x_icon.webp" id="1_mki26"]
+[ext_resource type="Script" uid="uid://gp6s0pe3jfew" path="res://scenes/nav_button.gd" id="2_tkpbl"]
+
+[node name="BackButton" type="TextureButton" unique_id=500648264]
+offset_right = 44.0
+offset_bottom = 44.0
+texture_normal = ExtResource("1_mki26")
+script = ExtResource("2_tkpbl")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

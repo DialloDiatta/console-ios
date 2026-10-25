@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="World" format=3 uid="uid://c758hbmhsvost"]
+
+[ext_resource type="Script" uid="uid://dwftn63by2a50" path="res://resources/levels.gd" id="1_u8o02"]
+[ext_resource type="Script" uid="uid://byu6djwdnsehr" path="res://resources/world.gd" id="2_8asoi"]
+
+[sub_resource type="Resource" id="Resource_u8o02"]
+script = ExtResource("1_u8o02")
+level_name = "1"
+scene_path = "uid://dl68h8btsp8be"
+highest = 4
+wait_time = 10.0
+metadata/_custom_type_script = "uid://dwftn63by2a50"
+
+[sub_resource type="Resource" id="Resource_8asoi"]
+script = ExtResource("1_u8o02")
+level_name = "2"
+scene_path = "uid://dl68h8btsp8be"
+highest = 8
+metadata/_custom_type_script = "uid://dwftn63by2a50"
+
+[sub_resource type="Resource" id="Resource_hyl6d"]
+script = ExtResource("1_u8o02")
+level_name = "3"
+scene_path = "uid://dl68h8btsp8be"
+highest = 12
+metadata/_custom_type_script = "uid://dwftn63by2a50"
+
+[sub_resource type="Resource" id="Resource_2dxmq"]
+script = ExtResource("1_u8o02")
+level_name = "4"
+scene_path = "uid://dl68h8btsp8be"
+highest = 15
+goal = 15
+metadata/_custom_type_script = "uid://dwftn63by2a50"
+
+[resource]
+script = ExtResource("2_8asoi")
+name = "Single Console"
+id = "001"
+levels = Array[ExtResource("1_u8o02")]([SubResource("Resource_u8o02"), SubResource("Resource_8asoi"), SubResource("Resource_hyl6d"), SubResource("Resource_2dxmq")])
+metadata/_custom_type_script = "uid://byu6djwdnsehr"

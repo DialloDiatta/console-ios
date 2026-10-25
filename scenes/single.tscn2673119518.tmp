@@ -1,0 +1,221 @@
+[gd_scene format=3 uid="uid://dl68h8btsp8be"]
+
+[ext_resource type="Script" uid="uid://chhukyg276xu4" path="res://scenes/Levels/random_int_2_consoles.gd" id="1_oejms"]
+[ext_resource type="PackedScene" uid="uid://1gbgsin2f27j" path="res://scenes/SetGamePopUp.tscn" id="2_r75bc"]
+[ext_resource type="Texture2D" uid="uid://cv5op5tyv0tv" path="res://assets/ui/perspective_background.png" id="3_1ctjg"]
+[ext_resource type="Shader" uid="uid://bil1vjalltxef" path="res://resources/shaders/blur.gdshader" id="4_jgwph"]
+[ext_resource type="Texture2D" uid="uid://cowgdt3vxv8xk" path="res://assets/ui/frame_1.webp" id="4_jvdm0"]
+[ext_resource type="PackedScene" uid="uid://c5ox4macy1vg1" path="res://scenes/frame.tscn" id="5_2xmwa"]
+[ext_resource type="Texture2D" uid="uid://d1r466kq3vjoe" path="res://assets/ui/banner.png" id="6_66jvu"]
+[ext_resource type="Texture2D" uid="uid://b1jokw6nf5yhx" path="res://assets/ui/grid.webp" id="6_jgwph"]
+[ext_resource type="AudioStream" uid="uid://ct0m30utky13j" path="res://assets/sfx/level-up-1.mp3" id="7_lx5qk"]
+[ext_resource type="PackedScene" uid="uid://bixljoltyauvt" path="res://scenes/back_button.tscn" id="8_jkbt0"]
+[ext_resource type="Texture2D" uid="uid://d0l6cht0ngfvs" path="res://assets/freedom_units_logo.webp" id="11_8ntgs"]
+[ext_resource type="Texture2D" uid="uid://dvro30j1smssa" path="res://assets/ui/goal_panel.webp" id="11_ujcyr"]
+[ext_resource type="FontFile" uid="uid://ebcnyfgt7wv2" path="res://assets/fonts/Thuast-Demo.otf" id="12_ahv1u"]
+[ext_resource type="Texture2D" uid="uid://dr3rbwhygq60a" path="res://assets/characters/Banaka.webp" id="13_jkwun"]
+[ext_resource type="Texture2D" uid="uid://cgoa50mmausd0" path="res://assets/characters/anaka.webp" id="14_0ulag"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ntgs"]
+shader = ExtResource("4_jgwph")
+shader_parameter/blur_amount = 1.8690001837775
+shader_parameter/mix_amount = 0.0
+shader_parameter/color_over = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_ujcyr"]
+colors = PackedColorArray(0.32340002, 0.66, 0.66, 1, 0.83, 0.83, 0.83, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ahv1u"]
+gradient = SubResource("Gradient_ujcyr")
+width = 765
+height = 30
+
+[node name="Main" type="Control" unique_id=229827327]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oejms")
+pop_up_scene = ExtResource("2_r75bc")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1197528428]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -339.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_1ctjg")
+
+[node name="BlurFilter" type="ColorRect" parent="Background" unique_id=1158561032]
+material = SubResource("ShaderMaterial_8ntgs")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control2" type="Control" parent="." unique_id=1292737446]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Frame3" type="Sprite2D" parent="Control2" unique_id=708235007]
+visible = false
+position = Vector2(945, 538)
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("4_jvdm0")
+
+[node name="TextureRect" type="TextureRect" parent="Control2" unique_id=424749722]
+layout_mode = 0
+offset_left = 681.00006
+offset_top = 264.0
+offset_right = 1331.0
+offset_bottom = 915.0
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_jgwph")
+
+[node name="Frame2" parent="Control2" unique_id=544095981 instance=ExtResource("5_2xmwa")]
+layout_mode = 0
+offset_left = 733.0
+offset_top = 324.0
+offset_right = 1137.0
+offset_bottom = 724.0
+scale = Vector2(1.1269451, 1.1269451)
+
+[node name="Banner" type="Sprite2D" parent="." unique_id=1988383862]
+position = Vector2(954, 35)
+scale = Vector2(0.3394781, 0.3394781)
+texture = ExtResource("6_66jvu")
+
+[node name="Timer" type="Timer" parent="." unique_id=951845022]
+unique_name_in_owner = true
+wait_time = 2.5
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=774621636]
+stream = ExtResource("7_lx5qk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=415768729]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -121.0
+offset_right = 60.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 40
+
+[node name="PlayButton" type="Button" parent="HBoxContainer" unique_id=479376499]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_ahv1u")
+theme_override_font_sizes/font_size = 56
+text = "Start"
+
+[node name="SelectGameButton" type="Button" parent="HBoxContainer" unique_id=842325435]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "Select Game"
+
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1023317326]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -382.0
+offset_top = 261.0
+offset_right = 382.0
+offset_bottom = 291.0
+grow_horizontal = 2
+pivot_offset = Vector2(-723, -66)
+value = 100.0
+texture_progress = SubResource("GradientTexture2D_ahv1u")
+tint_progress = Color(0.39999986, 1, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1316112027]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -105.5
+offset_top = -221.0
+offset_right = 105.5
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BackButton" parent="." unique_id=500648264 instance=ExtResource("8_jkbt0")]
+layout_mode = 0
+offset_left = 1789.0
+offset_top = 77.0
+offset_right = 1833.0
+offset_bottom = 121.0
+next_scene = "uid://mw4u75ow5ddu"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1871212759]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -487.0
+offset_top = 94.0
+offset_right = 487.0
+offset_bottom = 294.0
+grow_horizontal = 2
+texture = ExtResource("11_ujcyr")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=681234280]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.0
+offset_top = -86.0
+offset_right = 114.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("12_ahv1u")
+theme_override_font_sizes/font_size = 112
+text = "99 "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Banaka" type="Sprite2D" parent="." unique_id=1376566338]
+position = Vector2(1578, 604)
+texture = ExtResource("13_jkwun")
+
+[node name="Anaka" type="Sprite2D" parent="." unique_id=2115528655]
+position = Vector2(348, 757)
+texture = ExtResource("14_0ulag")
+
+[node name="Logo" type="TextureRect" parent="." unique_id=1016119044]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 60.0
+offset_right = 360.0
+offset_bottom = 255.0
+texture = ExtResource("11_8ntgs")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/SelectGameButton" to="." method="_on_select_game_button_pressed"]

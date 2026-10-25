@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://dqbckooi387oj"]
+
+[ext_resource type="ButtonGroup" uid="uid://dim2cb66cy0k2" path="res://scenes/Settings/settings_button_group.tres" id="1_k2lax"]
+[ext_resource type="Script" uid="uid://dx2gobm1fn730" path="res://scenes/Settings/settings.gd" id="1_nll1c"]
+[ext_resource type="Texture2D" uid="uid://btb2jfylvnofv" path="res://icon.svg" id="1_q2mcd"]
+[ext_resource type="Texture2D" uid="uid://dqv6001np6cep" path="res://assets/ui/cell.webp" id="4_f3efy"]
+[ext_resource type="PackedScene" uid="uid://bixljoltyauvt" path="res://scenes/back_button.tscn" id="5_3buk5"]
+
+[node name="Settings" type="Control" unique_id=22481866]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nll1c")
+
+[node name="PanelManager" type="MarginContainer" parent="." unique_id=1589326729]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelManager" unique_id=2075260718]
+layout_mode = 2
+
+[node name="ButtonContainer" type="VBoxContainer" parent="PanelManager/HBoxContainer" unique_id=641326120]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+
+[node name="GeneralButton" type="TextureButton" parent="PanelManager/HBoxContainer/ButtonContainer" unique_id=494133158]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_k2lax")
+texture_normal = ExtResource("1_q2mcd")
+texture_pressed = ExtResource("4_f3efy")
+
+[node name="GameplayButton" type="TextureButton" parent="PanelManager/HBoxContainer/ButtonContainer" unique_id=2071802277]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_k2lax")
+texture_normal = ExtResource("1_q2mcd")
+texture_pressed = ExtResource("4_f3efy")
+
+[node name="SoundButton" type="TextureButton" parent="PanelManager/HBoxContainer/ButtonContainer" unique_id=1976990411]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_k2lax")
+texture_normal = ExtResource("1_q2mcd")
+texture_pressed = ExtResource("4_f3efy")
+
+[node name="ControlsButton" type="TextureButton" parent="PanelManager/HBoxContainer/ButtonContainer" unique_id=1130243992]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_k2lax")
+texture_normal = ExtResource("1_q2mcd")
+texture_pressed = ExtResource("4_f3efy")
+
+[node name="PanelParent" type="Node" parent="PanelManager/HBoxContainer" unique_id=352297054]
+unique_name_in_owner = true
+
+[node name="GeneralPanel" type="PanelContainer" parent="PanelManager/HBoxContainer/PanelParent" unique_id=1322406293]
+unique_name_in_owner = true
+offset_left = 184.0
+offset_top = 50.0
+offset_right = 1870.0
+offset_bottom = 1030.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelManager/HBoxContainer/PanelParent/GeneralPanel" unique_id=1375096285]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="Label" parent="PanelManager/HBoxContainer/PanelParent/GeneralPanel/MarginContainer" unique_id=830589766]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "General"
+
+[node name="GameplayPanel" type="PanelContainer" parent="PanelManager/HBoxContainer/PanelParent" unique_id=426862740]
+unique_name_in_owner = true
+visible = false
+offset_left = 184.0
+offset_top = 50.0
+offset_right = 1870.0
+offset_bottom = 1030.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelManager/HBoxContainer/PanelParent/GameplayPanel" unique_id=1212594395]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="Label" parent="PanelManager/HBoxContainer/PanelParent/GameplayPanel/MarginContainer" unique_id=534650395]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "GamePlay"
+
+[node name="SoundPanel" type="PanelContainer" parent="PanelManager/HBoxContainer/PanelParent" unique_id=936463372]
+unique_name_in_owner = true
+visible = false
+offset_left = 184.0
+offset_top = 50.0
+offset_right = 1870.0
+offset_bottom = 1030.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelManager/HBoxContainer/PanelParent/SoundPanel" unique_id=1996298026]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="Label" parent="PanelManager/HBoxContainer/PanelParent/SoundPanel/MarginContainer" unique_id=767592346]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "Sound"
+
+[node name="ControlsPanel" type="PanelContainer" parent="PanelManager/HBoxContainer/PanelParent" unique_id=1791873742]
+unique_name_in_owner = true
+visible = false
+offset_left = 184.0
+offset_top = 50.0
+offset_right = 1870.0
+offset_bottom = 1030.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelManager/HBoxContainer/PanelParent/ControlsPanel" unique_id=2032536864]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="Label" parent="PanelManager/HBoxContainer/PanelParent/ControlsPanel/MarginContainer" unique_id=273099568]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "Controls"
+
+[node name="BackButton" parent="." unique_id=500648264 instance=ExtResource("5_3buk5")]
+layout_mode = 0
+offset_left = 1867.0
+offset_top = 25.0
+offset_right = 1911.0
+offset_bottom = 69.0
+next_scene = "uid://mw4u75ow5ddu"
